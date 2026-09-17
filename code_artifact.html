@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>恵比寿プロターブル | Urban & Stylish BREAD & DELI 料理教室</title>
+  <meta name="description" content="日常を上質に引き上げる「BREAD & DELI」の魔法。東京・恵比寿の少人数制料理教室。感覚を排した科学的・ロジカルな製パン・欧風料理指導で、自宅での確実な再現とおもてなしの自信を。" />
+
+  <!-- Google Fonts: Cormorant Garamond, Noto Serif JP, Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#1A232C',
+            stoneDark: '#2C3844',
+            stoneGray: '#5A6672',
+            stoneLight: '#F4EFEA',
+            warmIvory: '#FAF7F2',
+            terracotta: '#C86D51',
+            terracottaHover: '#B25B40',
+            mutedOlive: '#6B7A5A',
+            goldAccent: '#A68A56',
+            borderCream: '#E7DFD5',
+          },
+          fontFamily: {
+            serif: ['"Noto Serif JP"', 'serif'],
+            enSerif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF7F2;
+      color: #333F48;
+      font-family: 'Noto Sans JP', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* 質感のある背景ニュアンス */
+    .bg-grain {
+      background-image: radial-gradient(circle at 85% 15%, rgba(200, 109, 81, 0.03) 0%, transparent 60%),
+                        radial-gradient(circle at 10% 80%, rgba(107, 122, 90, 0.03) 0%, transparent 50%);
+    }
+
+    /* アコーディオン開閉 */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, padding 0.3s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 350px;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    /* 予約バナー固定表示 */
+    .stores-sticky-banner {
+      box-shadow: 0 -4px 20px rgba(26, 35, 44, 0.12);
+    }
+
+    /* 画像ホバーエフェクト */
+    .img-zoom {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .group:hover .img-zoom {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-warmIvory text-stoneDark antialiased bg-grain selection:bg-terracotta selection:text-white">
+
+  <!-- ============================================================== -->
+  <!-- 0. ヘッダー / グローバルナビゲーション (WIX想定) -->
+  <!-- ============================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-warmIvory/90 backdrop-blur-md border-b border-borderCream transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+      
+      <!-- ブランドロゴ（資料のリースモチーフ） -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full border border-terracotta/40 flex items-center justify-center p-1 group-hover:border-terracotta transition-colors bg-white shadow-sm">
+          <!-- リース風SVGアイコン -->
+          <svg viewBox="0 0 100 100" class="w-full h-full text-mutedOlive fill-none stroke-current stroke-[2.2]">
+            <circle cx="50" cy="50" r="42" stroke-dasharray="3 3"/>
+            <path d="M50 15 C35 15 20 30 20 50 C20 70 35 85 50 85 C65 85 80 70 80 50 C80 30 65 15 50 15 Z" stroke-width="1"/>
+            <path d="M48 20 C52 14 60 14 62 20" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M80 48 C86 52 86 60 80 62" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M52 80 C48 86 40 86 38 80" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M20 52 C14 48 14 40 20 38" stroke-width="1.5" stroke-linecap="round"/>
+            <text x="50" y="55" font-family="'Cormorant Garamond', serif" font-size="28" font-weight="700" fill="#1A232C" text-anchor="middle" stroke="none">EPT</text>
+          </svg>
+        </div>
+        <div>
+          <span class="block text-[10px] tracking-[0.25em] text-mutedOlive font-semibold uppercase font-sans">EBISU PRO TABLE</span>
+          <span class="block font-serif text-lg font-bold text-charcoal tracking-wider">恵比寿プロターブル</span>
+        </div>
+      </a>
+
+      <!-- デスクトップナビゲーション -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-stoneDark">
+        <a href="#concept" class="hover:text-terracotta transition-colors">コンセプト</a>
+        <a href="#strengths" class="hover:text-terracotta transition-colors">3つの強み</a>
+        <a href="#future" class="hover:text-terracotta transition-colors">得られる未来</a>
+        <a href="#lessons" class="hover:text-terracotta transition-colors">レッスン一覧・料金</a>
+        <a href="#instructor" class="hover:text-terracotta transition-colors">講師紹介</a>
+        <a href="#voices" class="hover:text-terracotta transition-colors">受講者の声</a>
+        <a href="#faq" class="hover:text-terracotta transition-colors">よくある質問</a>
+        <a href="#access" class="hover:text-terracotta transition-colors">アクセス</a>
+      </nav>
+
+      <!-- CTAボタン (STORES予約へ直結) -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#startup" class="bg-terracotta hover:bg-terracottaHover text-white px-5 py-2.5 rounded text-xs tracking-wider font-medium shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>スタートアップ予約</span>
+        </a>
+      </div>
+
+      <!-- モバイルメニュー開閉ボタン -->
+      <button id="mobileMenuBtn" class="lg:hidden p-2 text-charcoal focus:outline-none" aria-label="Menu">
+        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+      </button>
+    </div>
+
+    <!-- モバイルメニューアコーディオン -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-warmIvory border-b border-borderCream px-6 py-6 space-y-4 text-stoneDark text-base shadow-xl">
+      <a href="#concept" class="block hover:text-terracotta transition-colors">コンセプト</a>
+      <a href="#strengths" class="block hover:text-terracotta transition-colors">3つの強み</a>
+      <a href="#future" class="block hover:text-terracotta transition-colors">得られる未来</a>
+      <a href="#lessons" class="block hover:text-terracotta transition-colors">レッスン一覧・料金</a>
+      <a href="#instructor" class="block hover:text-terracotta transition-colors">代表講師紹介</a>
+      <a href="#voices" class="block hover:text-terracotta transition-colors">受講者の声</a>
+      <a href="#faq" class="block hover:text-terracotta transition-colors">よくあるご質問</a>
+      <a href="#access" class="block hover:text-terracotta transition-colors">アクセス・注意事項</a>
+      <div class="pt-4 border-t border-borderCream">
+        <a href="#startup" class="w-full bg-terracotta text-white py-3 rounded text-center block font-medium">
+          <i class="fa-solid fa-calendar-check mr-2"></i>スタートアップレッスン予約 (STORES)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- スペーサー -->
+  <div class="h-20"></div>
+
+  <!-- ============================================================== -->
+  <!-- 1. TOPファーストビュー (全面イメージ画像にキャッチコピーをオーバーレイ) -->
+  <!-- ============================================================== -->
+  <section class="relative min-h-[640px] lg:min-h-[80vh] flex items-center justify-center overflow-hidden border-b border-borderCream">
+    
+    <!-- 背景イメージ画像 (洗練されたテーブルコーディネートとアルチザンブレッド＆DELI) -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=2000&q=85" 
+        alt="恵比寿プロターブルのアルチザンブレッドとDELIの食卓" 
+        class="w-full h-full object-cover object-center transform scale-105 filter brightness-95"
+      />
+      <!-- 高級感と可読性を保つためのマルチレイヤーグラデーション -->
+      <div class="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/65 to-charcoal/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent to-charcoal/40"></div>
+    </div>
+
+    <!-- コンテンツオーバーレイ -->
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-20 w-full">
+      <div class="max-w-3xl space-y-7">
+        
+        <!-- サブバッジ -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-stoneLight text-xs tracking-[0.25em] font-enSerif uppercase font-medium">
+          <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
+          Urban &amp; Stylish Cooking Salon in Ebisu
+        </div>
+
+        <!-- メインキャッチコピー -->
+        <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.25] text-white font-bold tracking-tight">
+          本物のプロが教える少人数制。<br>
+          日常を上質に引き上げる<br>
+          <span class="font-enSerif italic font-normal text-terracotta text-4xl sm:text-5xl lg:text-7xl tracking-normal">“BREAD &amp; DELI”</span>の魔法。
+        </h1>
+
+        <p class="text-stoneLight/90 text-base sm:text-lg leading-relaxed max-w-2xl font-light">
+          和から洋へ。感覚ではなく「科学と理論」で学ぶから、自宅のキッチンでも迷わず美しく再現できる。<br class="hidden sm:inline">
+          洗練された空間で味わう本格製パンと欧風DELIで、日々の食卓に確かな充足感と豊かさを。
+        </p>
+
+        <!-- CTAエリア（STORES予約への直結導線） -->
+        <div class="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <a href="#startup" class="group bg-terracotta hover:bg-terracottaHover text-white px-8 py-4 rounded-md shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 text-center">
+            <i class="fa-solid fa-calendar-check text-sm"></i>
+            <span class="font-medium text-base">スタートアップレッスンを予約する</span>
+            <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+          </a>
+          <div class="text-xs text-stoneLight/80 flex items-center justify-center sm:justify-start gap-2 bg-charcoal/50 backdrop-blur-md px-3.5 py-2.5 rounded border border-white/10">
+            <span class="text-terracotta font-bold">5時間集中 / 7,700円（税込）</span>
+            <span>※STORES予約へ遷移します</span>
+          </div>
+        </div>
+
+        <!-- 3大特徴のミニバッジ -->
+        <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/20 max-w-xl">
+          <div class="flex items-center gap-2 text-white">
+            <i class="fa-solid fa-users text-terracotta text-sm"></i>
+            <span class="text-xs font-medium">最大6名の少人数制</span>
+          </div>
+          <div class="flex items-center gap-2 text-white">
+            <i class="fa-solid fa-flask text-terracotta text-sm"></i>
+            <span class="text-xs font-medium">ベーカーズ%の科学的指導</span>
+          </div>
+          <div class="flex items-center gap-2 text-white">
+            <i class="fa-solid fa-location-dot text-terracotta text-sm"></i>
+            <span class="text-xs font-medium">恵比寿駅 徒歩5分</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 2. コンセプトセクション (洋風上質な食卓と日常のアップグレード) -->
+  <!-- ============================================================== -->
+  <section id="concept" class="py-24 bg-white border-b border-borderCream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-enSerif tracking-[0.3em] text-terracotta font-semibold uppercase">Our Concept</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold">和から洋へ。日常の食卓を上質に</h2>
+        <div class="w-12 h-[2px] bg-terracotta mx-auto"></div>
+        <p class="text-stoneGray text-sm sm:text-base leading-relaxed">
+          レシピ本をなぞるだけでは届かない、本物の味と洗練。<br class="hidden sm:inline">
+          恵比寿プロターブルが目指すのは、「日々の暮らしの解像度と質を根本から引き上げる」ことです。
+        </p>
+      </div>
+
+      <!-- 写真＋解説の2カラムイントロ -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-xs font-bold tracking-widest text-mutedOlive font-enSerif uppercase">ELEVATE YOUR EVERYDAY TABLE</span>
+          <h3 class="font-serif text-2xl sm:text-3xl text-charcoal font-bold leading-snug">
+            ただパンを焼くのではなく、<br>食卓の空気感そのものを美しくデザインする。
+          </h3>
+          <p class="text-stoneGray text-sm sm:text-base leading-relaxed">
+            香ばしいクラストが弾ける自家製ハードパンと、彩り豊かで奥深い味わいの欧風デリ。
+            器の選び方からテーブルの余白、ワインとのマリアージュまで、都会的で洗練された食の楽しみ方をトータルで体感いただけます。
+          </p>
+          <div class="p-4 bg-warmIvory rounded-xl border border-borderCream flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-terracotta text-xl shadow-sm shrink-0">
+              <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+            <div>
+              <h4 class="font-serif font-bold text-charcoal text-sm">日常を贅沢に変えるひととき</h4>
+              <p class="text-stoneGray text-xs">忙しい日々に追われる大人へ、自分を満たす最高のリフレッシュ空間を提供します。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="rounded-2xl overflow-hidden shadow-xl aspect-[4/3] group relative">
+            <img 
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80" 
+              alt="上質なテーブルセッティングとパン" 
+              class="w-full h-full object-cover img-zoom"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent"></div>
+            <span class="absolute bottom-4 left-5 text-white text-xs font-enSerif tracking-widest">ARTISAN TABLE STYLING</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4つの上質要素グリッド（画像付きカード） -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- 01 食材 -->
+        <div class="bg-warmIvory rounded-xl overflow-hidden border border-borderCream hover:border-terracotta/40 transition-all duration-300 group shadow-sm flex flex-col">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80" alt="選び抜かれた小麦と塩" class="w-full h-full object-cover img-zoom">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-charcoal font-enSerif font-bold text-xs px-2.5 py-1 rounded">01 INGREDIENTS</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-charcoal mb-1 group-hover:text-terracotta transition-colors">食材 (Ingredients)</h3>
+              <span class="block text-xs text-mutedOlive font-semibold tracking-wider mb-2.5">妥協のない選定基準</span>
+              <p class="text-stoneGray text-xs leading-relaxed">
+                国産・海外産小麦の性質、天日塩や岩塩のミネラル分、発酵バターの融点まで。素材の本質を見抜く目を養います。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 レシピ -->
+        <div class="bg-warmIvory rounded-xl overflow-hidden border border-borderCream hover:border-terracotta/40 transition-all duration-300 group shadow-sm flex flex-col">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80" alt="プロ厨房の調理技法" class="w-full h-full object-cover img-zoom">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-charcoal font-enSerif font-bold text-xs px-2.5 py-1 rounded">02 RECIPE</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-charcoal mb-1 group-hover:text-terracotta transition-colors">レシピ (Recipe)</h3>
+              <span class="block text-xs text-mutedOlive font-semibold tracking-wider mb-2.5">プロ厨房レベルの調理法</span>
+              <p class="text-stoneGray text-xs leading-relaxed">
+                20年のシェフ経験に裏打ちされた再現性。中種法や長時間発酵、欧風出汁の抽出理論を家庭サイズに昇華。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 空間 -->
+        <div class="bg-warmIvory rounded-xl overflow-hidden border border-borderCream hover:border-terracotta/40 transition-all duration-300 group shadow-sm flex flex-col">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="恵比寿の洗練されたキッチンスタジオ" class="w-full h-full object-cover img-zoom">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-charcoal font-enSerif font-bold text-xs px-2.5 py-1 rounded">03 SPACE</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-charcoal mb-1 group-hover:text-terracotta transition-colors">空間 (Space)</h3>
+              <span class="block text-xs text-mutedOlive font-semibold tracking-wider mb-2.5">最大6名・洗練の都会的環境</span>
+              <p class="text-stoneGray text-xs leading-relaxed">
+                恵比寿の静謐なキッチンスタジオ。手元がよく見える贅沢なワークスペースと、美しいテーブルウェア。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 時間 -->
+        <div class="bg-warmIvory rounded-xl overflow-hidden border border-borderCream hover:border-terracotta/40 transition-all duration-300 group shadow-sm flex flex-col">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="上質な食卓を囲む豊かな時間" class="w-full h-full object-cover img-zoom">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-charcoal font-enSerif font-bold text-xs px-2.5 py-1 rounded">04 TIME</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-charcoal mb-1 group-hover:text-terracotta transition-colors">時間 (Time)</h3>
+              <span class="block text-xs text-mutedOlive font-semibold tracking-wider mb-2.5">日常の質が上がる体験</span>
+              <p class="text-stoneGray text-xs leading-relaxed">
+                週末に大切な人を招く喜び。平日の夕食も短時間でプロの味付けに。人生そのものを豊かに彩る時間を提供します。
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 3. 他の料理教室との違い・選ばれる3つの強み -->
+  <!-- ============================================================== -->
+  <section id="strengths" class="py-24 bg-stoneLight border-b border-borderCream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-enSerif tracking-[0.3em] text-terracotta font-semibold uppercase">Why We Are Different</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold">他の料理教室との決定的な3つの違い</h2>
+        <div class="w-12 h-[2px] bg-terracotta mx-auto"></div>
+        <p class="text-stoneGray text-sm sm:text-base">
+          「感覚」や「なんとなく」を徹底排除。誰もが自宅で確実に再現できる理由。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- 強み1: 科学的・ロジカル指導 -->
+        <div class="bg-white rounded-2xl p-8 border border-borderCream shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+          <div class="h-40 rounded-xl overflow-hidden mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=600&q=80" alt="計量と温度管理の科学的指導" class="w-full h-full object-cover img-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 flex items-center gap-2 text-white text-xs font-enSerif">
+              <i class="fa-solid fa-flask text-terracotta"></i>
+              <span>BAKERS PERCENTAGE &amp; SCIENCE</span>
+            </div>
+          </div>
+          
+          <span class="text-xs font-bold tracking-widest text-mutedOlive font-enSerif uppercase">Strength 01</span>
+          <h3 class="font-serif text-xl font-bold text-charcoal mt-1 mb-3">科学的・ロジカルな指導</h3>
+          <p class="text-stoneGray text-sm leading-relaxed mb-4">
+            「適量」「きつね色」といった曖昧な表現はありません。ベーカーズパーセント、DDT（捏ね上げ目標温度）、吸水率、グルテン形成のメカニズムを数値と科学で分かりやすく解説します。
+          </p>
+          <ul class="text-xs text-stoneDark space-y-2 border-t border-borderCream pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-terracotta"></i> なぜ膨らまなかったのかの原因を自己分析できる</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-terracotta"></i> 季節や室温に応じた仕込み水温の計算式を習得</li>
+          </ul>
+        </div>
+
+        <!-- 強み2: 座学重視の実践カリキュラム -->
+        <div class="bg-white rounded-2xl p-8 border border-borderCream shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+          <div class="h-40 rounded-xl overflow-hidden mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="座学テキストとノート" class="w-full h-full object-cover img-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 flex items-center gap-2 text-white text-xs font-enSerif">
+              <i class="fa-solid fa-book-open text-terracotta"></i>
+              <span>DEEP LEARNING &amp; APPLIED SKILLS</span>
+            </div>
+          </div>
+          
+          <span class="text-xs font-bold tracking-widest text-mutedOlive font-enSerif uppercase">Strength 02</span>
+          <h3 class="font-serif text-xl font-bold text-charcoal mt-1 mb-3">座学重視の実践カリキュラム</h3>
+          <p class="text-stoneGray text-sm leading-relaxed mb-4">
+            ただ手を動かして終わりではありません。発酵などの待ち時間を徹底活用し、素材の特性や製法理論の講義を実施。根本的な仕組みを頭で理解してから実習へと繋げます。
+          </p>
+          <ul class="text-xs text-stoneDark space-y-2 border-t border-borderCream pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-terracotta"></i> オリジナルの充実した理論テキストを提供</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-terracotta"></i> レシピの足し算・引き算ができる応用力を養成</li>
+          </ul>
+        </div>
+
+        <!-- 強み3: 少人数制＆独立開業支援 -->
+        <div class="bg-white rounded-2xl p-8 border border-borderCream shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+          <div class="h-40 rounded-xl overflow-hidden mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=600&q=80" alt="少人数制の個別指導風景" class="w-full h-full object-cover img-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 flex items-center gap-2 text-white text-xs font-enSerif">
+              <i class="fa-solid fa-user-group text-terracotta"></i>
+              <span>MAX 6 PERSONS &amp; PRO SUPPORT</span>
+            </div>
+          </div>
+          
+          <span class="text-xs font-bold tracking-widest text-mutedOlive font-enSerif uppercase">Strength 03</span>
+          <h3 class="font-serif text-xl font-bold text-charcoal mt-1 mb-3">少人数制 ＆ カフェ開業支援</h3>
+          <p class="text-stoneGray text-sm leading-relaxed mb-4">
+            1クラス最大6名までの完全少人数制。講師が生徒一人ひとりの生地の弾力や捏ね具合まで見届けます。日常の上質化はもちろん、カフェ開業を目指すプロ志望にも完全対応。
+          </p>
+          <ul class="text-xs text-stoneDark space-y-2 border-t border-borderCream pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-terracotta"></i> 質問しやすくアットホームで濃密な指導環境</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-terracotta"></i> 商用厨房の設備設計や原価計算も相談可能</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 4. この教室に通うことで得られる未来 (ペルソナ別ベネフィット) -->
+  <!-- ============================================================== -->
+  <section id="future" class="py-24 bg-white border-b border-borderCream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-enSerif tracking-[0.3em] text-terracotta font-semibold uppercase">Your Future</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold">恵比寿プロターブルで手に入る確かな未来</h2>
+        <div class="w-12 h-[2px] bg-terracotta mx-auto"></div>
+        <p class="text-stoneGray text-sm sm:text-base">
+          あなたの目指すステージに合わせた、確かな成長と感動をお約束します。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        
+        <!-- B2C: ライフスタイル向上層 -->
+        <div class="bg-warmIvory rounded-2xl overflow-hidden border border-borderCream shadow-sm flex flex-col justify-between">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1000&q=80" alt="友人たちとおもてなしの食卓を囲む様子" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent"></div>
+            <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
+              <div>
+                <span class="text-[10px] font-enSerif tracking-widest text-mutedOlive bg-white px-2 py-0.5 rounded font-bold uppercase">B2C LIFESTYLE</span>
+                <h3 class="font-serif text-xl sm:text-2xl font-bold mt-1">日常の食卓を上質に、おもてなしの自信を</h3>
+              </div>
+              <i class="fa-solid fa-wine-glass text-2xl text-stoneLight/80"></i>
+            </div>
+          </div>
+
+          <div class="p-8 sm:p-10 space-y-4">
+            <p class="text-xs text-stoneGray font-medium">代表対象：30〜50代 / 「丁寧な暮らしと、日々の食の豊かさを取り戻したい方」</p>
+
+            <ul class="space-y-4 text-sm text-stoneDark">
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-white border border-borderCream flex items-center justify-center text-terracotta text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
+                <span><strong>週末のテーブルが華やぐ：</strong> 焼き立てのハードブレッドとワインに合うDELIで、家族や友人を自信を持っておもてなし。</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-white border border-borderCream flex items-center justify-center text-terracotta text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
+                <span><strong>平日の夕食作りが手際よく変化：</strong> プロの出汁・ソース理論により、短時間で本格ビストロのような味が再現可能に。</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-white border border-borderCream flex items-center justify-center text-terracotta text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
+                <span><strong>スーパーの買い物が楽しく変わる：</strong> 小麦や調味料の裏面表示を見る目が変わり、食に対する感性が一段と研ぎ澄まされます。</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- B2B: 独立・開業志向層 -->
+        <div class="bg-warmIvory rounded-2xl overflow-hidden border border-borderCream shadow-sm flex flex-col justify-between">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" alt="カフェやベーカリーの店舗イメージ" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent"></div>
+            <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
+              <div>
+                <span class="text-[10px] font-enSerif tracking-widest text-terracotta bg-white px-2 py-0.5 rounded font-bold uppercase">B2B PROFESSIONAL</span>
+                <h3 class="font-serif text-xl sm:text-2xl font-bold mt-1">自己流を脱却し、商用レベルの設計力を</h3>
+              </div>
+              <i class="fa-solid fa-store text-2xl text-stoneLight/80"></i>
+            </div>
+          </div>
+
+          <div class="p-8 sm:p-10 space-y-4">
+            <p class="text-xs text-stoneGray font-medium">代表対象：40〜60代 / 「カフェ開業・ベーカリー独立に向け、プロの技術を身につけたい方」</p>
+
+            <ul class="space-y-4 text-sm text-stoneDark">
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-white border border-borderCream flex items-center justify-center text-terracotta text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
+                <span><strong>オリジナルパンをゼロから処方：</strong> ベーカーズパーセントに基づき、理想の食感・風味のレシピ設計図を自力で引けるように。</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-white border border-borderCream flex items-center justify-center text-terracotta text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
+                <span><strong>カフェ向きのDELI・軽食メニュー開発：</strong> パンを引き立てる季節のポタージュやデリプレートをセットで商品化できる実戦力。</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-white border border-borderCream flex items-center justify-center text-terracotta text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
+                <span><strong>リアルな開業ノウハウと相談体制：</strong> 厨房機器の選定、原価率コントロール、集客の悩みまで元オーナーシェフが伴走。</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 5. レッスン紹介・料金体系 (スタートアップ ＆ 本科コース) -->
+  <!-- ============================================================== -->
+  <section id="lessons" class="py-24 bg-stoneLight border-b border-borderCream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-enSerif tracking-[0.3em] text-terracotta font-semibold uppercase">Curriculum &amp; Pricing</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold">レッスン・受講コース案内</h2>
+        <div class="w-12 h-[2px] bg-terracotta mx-auto"></div>
+        <p class="text-stoneGray text-sm sm:text-base">
+          まずはすべての土台となる「スタートアップレッスン」から。<br>
+          納得していただいた方のみ、本格的な本科コースへとステップアップしていただけます。
+        </p>
+      </div>
+
+      <!-- ① スタートアップレッスン（体験・必須ゲートウェイ）フィーチャーカード -->
+      <div id="startup" class="bg-white rounded-3xl border-2 border-terracotta/70 shadow-xl overflow-hidden mb-16 relative">
+        <div class="bg-terracotta text-white py-2.5 px-6 text-center text-xs tracking-widest font-semibold uppercase flex items-center justify-center gap-2">
+          <i class="fa-solid fa-star"></i>
+          <span>まずはここから！ 初めての方・経験者ともに受講必須の体験レッスン</span>
+          <i class="fa-solid fa-star"></i>
+        </div>
+
+        <div class="p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="bg-stoneLight text-terracotta text-xs font-bold px-3 py-1 rounded-full border border-borderCream">1日完結 / 5時間集中</span>
+              <span class="bg-warmIvory text-charcoal text-xs font-medium px-3 py-1 rounded-full border border-borderCream">定員：最大6名</span>
+              <span class="bg-red-50 text-terracotta text-xs font-semibold px-3 py-1 rounded-full border border-terracotta/30">
+                <i class="fa-solid fa-triangle-exclamation mr-1"></i>エプロン・筆記具ご持参
+              </span>
+            </div>
+
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-charcoal leading-snug">
+              スタートアップレッスン<br>
+              <span class="text-base sm:text-lg font-normal text-stoneGray">〜プロ伝授・基礎中の基礎を学ぶ本格パン作り体験〜</span>
+            </h3>
+
+            <p class="text-stoneGray text-sm sm:text-base leading-relaxed">
+              パン作りが初めての方でも安心。パン作りの全体像、材料の役割（小麦・イースト・塩・糖・油脂・水分）、発酵の見極め方を座学と実践で徹底習得。焼き上がりの感動と試食を存分にお楽しみいただけます。
+            </p>
+
+            <!-- 持ち物案内ブロック（手ぶらNG・持参明記） -->
+            <div class="p-4 rounded-xl bg-warmIvory border border-borderCream flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-white border border-borderCream flex items-center justify-center text-terracotta text-lg shrink-0">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </div>
+              <div class="text-xs text-stoneDark space-y-1">
+                <span class="font-bold text-charcoal block text-sm">【当日の持ち物についてのお願い】</span>
+                <p>・<strong>エプロン</strong>　・<strong>ハンドタオル</strong>　・<strong>筆記用具</strong></p>
+                <p class="text-stoneGray">※パン生地をこねる台、オーブン、計量器具、焼き上がりの持ち帰り用袋等はすべて教室にてご用意しています。</p>
+              </div>
+            </div>
+
+            <!-- 4ステップの流れ (資料PPTより) -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+              <div class="bg-warmIvory p-3 rounded-lg border border-borderCream text-center">
+                <span class="text-xs font-enSerif font-bold text-terracotta block">STEP 01</span>
+                <span class="text-xs font-bold text-charcoal">座学・理論講義</span>
+                <span class="text-[10px] text-stoneGray block mt-0.5">配合と材料の役割</span>
+              </div>
+              <div class="bg-warmIvory p-3 rounded-lg border border-borderCream text-center">
+                <span class="text-xs font-enSerif font-bold text-terracotta block">STEP 02</span>
+                <span class="text-xs font-bold text-charcoal">生地捏ね・成形</span>
+                <span class="text-[10px] text-stoneGray block mt-0.5">手ごねの実践実習</span>
+              </div>
+              <div class="bg-warmIvory p-3 rounded-lg border border-borderCream text-center">
+                <span class="text-xs font-enSerif font-bold text-terracotta block">STEP 03</span>
+                <span class="text-xs font-bold text-charcoal">発酵・焼成</span>
+                <span class="text-[10px] text-stoneGray block mt-0.5">温度とクープの極意</span>
+              </div>
+              <div class="bg-warmIvory p-3 rounded-lg border border-borderCream text-center">
+                <span class="text-xs font-enSerif font-bold text-terracotta block">STEP 04</span>
+                <span class="text-xs font-bold text-charcoal">試食＆振り返り</span>
+                <span class="text-[10px] text-stoneGray block mt-0.5">DELIと共に味わう</span>
+              </div>
+            </div>
+
+            <!-- 受講料 ＆ STORES予約ボタン -->
+            <div class="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-borderCream">
+              <div>
+                <span class="text-xs text-stoneGray block">受講料（材料費・試食・税込）</span>
+                <span class="font-enSerif text-3xl sm:text-4xl font-bold text-charcoal">¥7,700 <span class="text-sm font-sans font-normal text-stoneGray">/ 5時間</span></span>
+              </div>
+
+              <!-- 予約はSTORESへ直結 -->
+              <a href="https://stores.jp/" target="_blank" rel="noopener noreferrer" class="bg-terracotta hover:bg-terracottaHover text-white px-8 py-4 rounded-md shadow-lg hover:shadow-xl transition-all duration-200 text-center font-medium text-base flex items-center justify-center gap-3">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>STORESで日程を見る・予約する</span>
+              </a>
+            </div>
+            <p class="text-[11px] text-stoneGray text-right">※決済・空席予約は外部の「STORES予約」システムにて安全に管理されます</p>
+
+          </div>
+
+          <!-- 右側ビジュアル（実習写真2枚構成） -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3] relative group">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="本格パンの焼き上がり" class="w-full h-full object-cover img-zoom">
+              <div class="absolute bottom-3 left-3 bg-charcoal/80 backdrop-blur-md text-white px-3 py-1 rounded text-xs">
+                焼きたてパンのお持ち帰り付き
+              </div>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-md aspect-[16/9] relative group">
+              <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=800&q=80" alt="パン生地を捏ねる手元" class="w-full h-full object-cover img-zoom">
+              <div class="absolute bottom-3 left-3 bg-charcoal/80 backdrop-blur-md text-white px-3 py-1 rounded text-xs">
+                一人ひとりの手元を丁寧に確認
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ② 本科通学コース比較カード (資料P10、PPTより) -->
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs font-enSerif tracking-[0.2em] text-mutedOlive font-semibold uppercase">High-Level Training Class</span>
+        <h3 class="font-serif text-2xl font-bold text-charcoal">本科通学コース（ステップアップ）</h3>
+        <p class="text-xs text-stoneGray mt-2">スタートアップレッスン修了者のみが進める、本気で極めるための特別カリキュラム。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- 本科A: ブレッドコース -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-borderCream shadow-sm flex flex-col justify-between group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=800&q=80" alt="アルチザンブレッドのクープ" class="w-full h-full object-cover img-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
+              <div>
+                <span class="text-[10px] font-bold text-terracotta bg-white px-2 py-0.5 rounded tracking-wider uppercase">ADVANCED BREAD</span>
+                <h4 class="font-serif text-2xl font-bold mt-1">本科ブレッドコース</h4>
+              </div>
+              <span class="text-xs bg-charcoal/80 text-white px-3 py-1 rounded border border-white/20">全12回 / 月1〜2回</span>
+            </div>
+          </div>
+
+          <div class="p-8 space-y-5 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-stoneGray">リーンパンからリッチパン、長時間熟成、オリジナル処方の設計図を描けるまでを完全習得。</p>
+
+            <div class="space-y-3">
+              <div class="bg-warmIvory p-3.5 rounded-xl text-xs border border-borderCream">
+                <strong class="text-charcoal block mb-1">【習得するコア理論・技術】</strong>
+                <p class="text-stoneGray leading-relaxed">
+                  ベーカーズパーセント、中種法、DDT温度管理、高加水生地のグルテン形成、オートリーズ、フィンガーテスト、クープの立ち上がり（耳・エッジ）のコントロール
+                </p>
+              </div>
+              <div class="bg-warmIvory p-3.5 rounded-xl text-xs border border-borderCream">
+                <strong class="text-charcoal block mb-1">【到達ゴール】</strong>
+                <p class="text-stoneGray leading-relaxed">
+                  市販のレシピ本に頼らず、自分が狙った食感・風味・ボリュームのオリジナルパンをゼロから設計できる能力。
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-borderCream pt-5 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-stoneGray block">受講料目安（税込）</span>
+                <span class="font-enSerif text-2xl font-bold text-charcoal">¥280,000 <span class="text-xs font-normal text-stoneGray">（予定）</span></span>
+              </div>
+              <span class="text-xs text-stoneGray">※スタートアップ修了後にご案内</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 本科B: DELI＆欧風料理コース -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-borderCream shadow-sm flex flex-col justify-between group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="色鮮やかなDELIプレート" class="w-full h-full object-cover img-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
+              <div>
+                <span class="text-[10px] font-bold text-mutedOlive bg-white px-2 py-0.5 rounded tracking-wider uppercase">DELI &amp; CUISINE</span>
+                <h4 class="font-serif text-2xl font-bold mt-1">本科DELI・料理コース</h4>
+              </div>
+              <span class="text-xs bg-charcoal/80 text-white px-3 py-1 rounded border border-white/20">全12回 / 月1〜2回</span>
+            </div>
+          </div>
+
+          <div class="p-8 space-y-5 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-stoneGray">パンを引き立てる本格欧風デリ、温製ポタージュ、ソースとスパイスの味付け理論を体系化。</p>
+
+            <div class="space-y-3">
+              <div class="bg-warmIvory p-3.5 rounded-xl text-xs border border-borderCream">
+                <strong class="text-charcoal block mb-1">【習得するコア理論・技術】</strong>
+                <p class="text-stoneGray leading-relaxed">
+                  フランス料理の基本出汁（フォン・ブイヨン）、オイルとビネガーのエマルジョン、パンに合う温かい季節スープ、冷製アンティパスト、彩り豊かな盛り付け演出
+                </p>
+              </div>
+              <div class="bg-warmIvory p-3.5 rounded-xl text-xs border border-borderCream">
+                <strong class="text-charcoal block mb-1">【到達ゴール】</strong>
+                <p class="text-stoneGray leading-relaxed">
+                  おもてなしで歓声が上がるデリプレートの構成力、カフェランチの看板サイドメニューの設計能力。
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-borderCream pt-5 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-stoneGray block">受講料目安（税込）</span>
+                <span class="font-enSerif text-2xl font-bold text-charcoal">¥280,000 <span class="text-xs font-normal text-stoneGray">（予定）</span></span>
+              </div>
+              <span class="text-xs text-stoneGray">※スタートアップ修了後にご案内</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- プロ開業サポート告知バナー -->
+      <div class="mt-10 bg-charcoal text-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="space-y-1 text-center sm:text-left">
+          <span class="text-xs font-enSerif tracking-widest text-goldAccent uppercase font-bold">For Professional &amp; Cafe Owner</span>
+          <h4 class="font-serif text-xl font-bold">カフェ・ベーカリー独立開業サポートプログラム</h4>
+          <p class="text-xs text-stoneLight/80">厨房導線設計・商用レシピ開発・原価計算まで元オーナーシェフが個別コンサルティング。</p>
+        </div>
+        <a href="#access" class="bg-stoneDark hover:bg-stoneGray text-white border border-stoneGray/50 text-xs px-6 py-3 rounded whitespace-nowrap transition-colors">
+          個別相談・お問い合わせ
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 6. 代表講師紹介 (女性シェフ・圧倒的な権威性と指導力) -->
+  <!-- ============================================================== -->
+  <section id="instructor" class="py-24 bg-white border-b border-borderCream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- 講師写真 (上品で洗練された女性シェフ/料理講師) -->
+        <div class="lg:col-span-5">
+          <div class="relative max-w-md mx-auto">
+            <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-stoneLight aspect-[3/4] relative">
+              <img 
+                src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80" 
+                alt="代表講師 河崎瑠里（女性シェフ・料理講師）" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent"></div>
+            </div>
+            
+            <!-- 実績バッジ -->
+            <div class="absolute -bottom-6 -right-4 bg-warmIvory p-5 rounded-2xl border border-borderCream shadow-xl text-center">
+              <span class="font-enSerif text-3xl font-bold text-terracotta block leading-none">20<span class="text-base font-normal ml-0.5">Years</span></span>
+              <span class="text-[11px] text-stoneDark font-medium mt-1 block">料理講師歴の実績</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 経歴・メッセージ -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-enSerif tracking-[0.25em] text-terracotta font-semibold uppercase">Chef &amp; Instructor</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+              河崎 瑠里 <span class="text-base font-normal font-enSerif text-stoneGray tracking-wider">/ RURI KAWASAKI</span>
+            </h2>
+            <p class="text-sm font-semibold text-mutedOlive">料理講師歴20年の実績 × 元フレンチレストランオーナーシェフ</p>
+          </div>
+
+          <!-- 経歴箇条書き -->
+          <div class="space-y-3 py-3 border-y border-borderCream">
+            <div class="flex items-start gap-3 text-sm">
+              <i class="fa-solid fa-check text-terracotta mt-1"></i>
+              <span><strong>フレンチレストラン経営：</strong> オーナーシェフとして現場厨房で培った本物の火入れ・出汁・ソースの理論。</span>
+            </div>
+            <div class="flex items-start gap-3 text-sm">
+              <i class="fa-solid fa-check text-terracotta mt-1"></i>
+              <span><strong>20年超の指導実績：</strong> 延べ数千人の生徒に「失敗しない科学的アプローチ」を伝授してきた圧倒的な指導力。</span>
+            </div>
+            <div class="flex items-start gap-3 text-sm">
+              <i class="fa-solid fa-check text-terracotta mt-1"></i>
+              <span><strong>飲食開業・商品プロデュース：</strong> 複数の人気カフェ・ベーカリーの立ち上げ、メニュー監修、厨房コンサルを担当。</span>
+            </div>
+          </div>
+
+          <!-- メッセージ -->
+          <div class="space-y-4 text-stoneDark text-sm sm:text-base leading-relaxed font-light">
+            <p>
+              「パン作りやお料理は、決して特別な才能や生まれ持った感覚で行うものではありません。なぜこの温度なのか、なぜこのタイミングで捏ねるのか――すべての工程には美しい科学的根拠が存在します。」
+            </p>
+            <p>
+              「理由がわかれば、自宅のいつものキッチンでも、まるでプロが焼いたようなパンやビストロのデリが必ず再現できるようになります。あなたの毎日の食卓が、心から愛おしく誇らしいものになるお手伝いをいたします。」
+            </p>
+          </div>
+
+          <div class="pt-2">
+            <a href="#startup" class="inline-flex items-center gap-2 text-sm text-terracotta font-bold hover:underline">
+              <span>河崎先生のスタートアップレッスンを予約する</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 7. 受講者の声 (社会的証明・論理と上質の証明) -->
+  <!-- ============================================================== -->
+  <section id="voices" class="py-24 bg-stoneLight border-b border-borderCream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-enSerif tracking-[0.3em] text-terracotta font-semibold uppercase">Voices &amp; Social Proof</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold">受講生の声・社会的証明</h2>
+        <div class="w-12 h-[2px] bg-terracotta mx-auto"></div>
+        <p class="text-stoneGray text-sm sm:text-base">
+          日常を豊かにしたい会社員の方から、カフェ独立を目指す方まで、確かな変化を実感されています。
+        </p>
+      </div>
+
+      <!-- 代表的引用ブロック (資料P11より) -->
+      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-borderCream shadow-sm mb-12 max-w-4xl mx-auto text-center relative">
+        <i class="fa-solid fa-quote-left text-4xl text-terracotta/20 absolute top-6 left-8"></i>
+        <blockquote class="font-serif text-xl sm:text-2xl text-charcoal font-medium leading-relaxed my-4">
+          “なぜそうするのかが明確に理解できる。<br class="hidden sm:inline">
+          人生の後半の時間の使い方として、これ以上ない選択です。”
+        </blockquote>
+        <cite class="text-xs text-stoneGray not-italic block mt-4 tracking-wider">
+          ― 山田 佳子 様（57歳 / 元教諭・コミュニティカフェ開業準備中）
+        </cite>
+      </div>
+
+      <!-- 3つの詳細レビューカード（写真アイコン入り） -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- レビュー1 -->
+        <div class="bg-white rounded-2xl p-6 border border-borderCream shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex text-amber-500 text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] text-mutedOlive font-semibold bg-mutedOlive/10 px-2 py-0.5 rounded">日常向上</span>
+            </div>
+            <h4 class="font-bold text-charcoal text-base">「忙しい平日でも心を満たしてくれる」</h4>
+            <p class="text-stoneGray text-xs leading-relaxed">
+              「平日は仕事に追われて食事も適当になりがちでした。プロターブルで理論を学んでからは、手際よく短時間で本格的なDELIが作れるように。週末に焼くパンの香りに本当に癒やされています。」
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderCream mt-4 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-stoneLight flex items-center justify-center text-stoneDark font-enSerif font-bold text-xs">FM</div>
+            <div class="text-[11px] text-stoneGray">
+              <strong class="text-charcoal block">藤井 美咲 様（34歳 / マーケター）</strong>
+              <span>スタートアップ修了</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- レビュー2 -->
+        <div class="bg-white rounded-2xl p-6 border border-borderCream shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex text-amber-500 text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] text-terracotta font-semibold bg-terracotta/10 px-2 py-0.5 rounded">開業準備</span>
+            </div>
+            <h4 class="font-bold text-charcoal text-base">「自己流のパン焼きから完全に脱却」</h4>
+            <p class="text-stoneGray text-xs leading-relaxed">
+              「趣味で10年間パンを焼いていましたが、日によって仕上がりがバラつくのが悩みでした。ベーカーズパーセントや水温管理を学んだことで、狙った通りのクラムとクープが確実に出せるようになりました。」
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderCream mt-4 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-stoneLight flex items-center justify-center text-stoneDark font-enSerif font-bold text-xs">KN</div>
+            <div class="text-[11px] text-stoneGray">
+              <strong class="text-charcoal block">中村 健太 様（42歳 / 元IT企業PM）</strong>
+              <span>カフェ独立準備中</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- レビュー3 -->
+        <div class="bg-white rounded-2xl p-6 border border-borderCream shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex text-amber-500 text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] text-mutedOlive font-semibold bg-mutedOlive/10 px-2 py-0.5 rounded">おもてなし</span>
+            </div>
+            <h4 class="font-bold text-charcoal text-base">「友人を招く時のおもてなしに自信」</h4>
+            <p class="text-stoneGray text-xs leading-relaxed">
+              「ただ美味しいだけでなく、盛り付けやテーブルコーディネートの美学まで学べるのが他にはない魅力。友人たちから『まるで恵比寿の隠れ家レストランみたい！』と絶賛されます。」
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderCream mt-4 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-stoneLight flex items-center justify-center text-stoneDark font-enSerif font-bold text-xs">YT</div>
+            <div class="text-[11px] text-stoneGray">
+              <strong class="text-charcoal block">高橋 友香 様（48歳 / サロン経営）</strong>
+              <span>本科コース在籍</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 8. ブログ ＆ Instagram・Threads SNS集客セクション -->
+  <!-- ============================================================== -->
+  <section class="py-24 bg-white border-b border-borderCream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="space-y-2">
+          <span class="text-xs font-enSerif tracking-[0.3em] text-terracotta font-semibold uppercase">Journal &amp; Social</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold">公式ブログ ＆ SNS日誌</h2>
+          <p class="text-stoneGray text-sm">製パンの科学的豆知識や日々のサロン風景をInstagram &amp; Threadsで連日発信中。</p>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-full border border-borderCream hover:border-charcoal transition-colors">
+            <i class="fa-brands fa-instagram text-base text-pink-600"></i>
+            <span>Instagramを見る</span>
+          </a>
+          <a href="https://www.threads.net/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-full border border-borderCream hover:border-charcoal transition-colors">
+            <i class="fa-brands fa-threads text-base text-charcoal"></i>
+            <span>Threadsをフォロー</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ブログ・コラム記事カード (SEO検索流入の受け皿) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 記事1 -->
+        <article class="group cursor-pointer">
+          <div class="rounded-xl overflow-hidden aspect-[16/10] mb-4 bg-stoneLight border border-borderCream relative">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80" alt="彩り豊かなデリプレート" class="w-full h-full object-cover img-zoom">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-charcoal text-[11px] font-bold px-2.5 py-1 rounded">レシピ理論</span>
+          </div>
+          <time class="text-[11px] text-stoneGray">2026.08.28</time>
+          <h3 class="font-serif text-lg font-bold text-charcoal mt-1 group-hover:text-terracotta transition-colors line-clamp-2">
+            なぜハードパンには「天日塩」が適しているのか？塩のミネラル分とグルテンの引き締め効果
+          </h3>
+          <p class="text-stoneGray text-xs mt-2 line-clamp-2">
+            パン作りにおいてわずか2%前後の塩。しかしその選び方ひとつで、発酵スピードと焼き上がりのクープの立ち方が劇的に変化します。
+          </p>
+        </article>
+
+        <!-- 記事2 -->
+        <article class="group cursor-pointer">
+          <div class="rounded-xl overflow-hidden aspect-[16/10] mb-4 bg-stoneLight border border-borderCream relative">
+            <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="ワインとディナーテーブル" class="w-full h-full object-cover img-zoom">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-charcoal text-[11px] font-bold px-2.5 py-1 rounded">食卓の美学</span>
+          </div>
+          <time class="text-[11px] text-stoneGray">2026.08.15</time>
+          <h3 class="font-serif text-lg font-bold text-charcoal mt-1 group-hover:text-terracotta transition-colors line-clamp-2">
+            週末のおもてなしを格上げする「盛り付けの色彩三原則」とオリーブオイルの艶
+          </h3>
+          <p class="text-stoneGray text-xs mt-2 line-clamp-2">
+            オリーブオイルの艶、ハーブの緑、焼き色のコントラスト。視覚から美味しいと感じさせるためのプロのスタイリング術。
+          </p>
+        </article>
+
+        <!-- 記事3 -->
+        <article class="group cursor-pointer">
+          <div class="rounded-xl overflow-hidden aspect-[16/10] mb-4 bg-stoneLight border border-borderCream relative">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="モダンキッチン" class="w-full h-full object-cover img-zoom">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-charcoal text-[11px] font-bold px-2.5 py-1 rounded">開業ノウハウ</span>
+          </div>
+          <time class="text-[11px] text-stoneGray">2026.08.02</time>
+          <h3 class="font-serif text-lg font-bold text-charcoal mt-1 group-hover:text-terracotta transition-colors line-clamp-2">
+            小さなカフェを始める前に知っておくべき、オーブン選定と冷凍生地活用のオペレーション
+          </h3>
+          <p class="text-stoneGray text-xs mt-2 line-clamp-2">
+            一人営業でもクオリティを落とさない仕込みスケジュール。元オーナーシェフが現場目線でアドバイスします。
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 9. よくある質問 (FAQ アコーディオン) -->
+  <!-- ============================================================== -->
+  <section id="faq" class="py-24 bg-stoneLight border-b border-borderCream">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center space-y-4 mb-16">
+        <span class="text-xs font-enSerif tracking-[0.3em] text-terracotta font-semibold uppercase">FAQ</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold">よくあるご質問</h2>
+        <div class="w-12 h-[2px] bg-terracotta mx-auto"></div>
+        <p class="text-stoneGray text-sm">受講にあたって不安な点やご不明な点にお答えします。</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- Q1 -->
+        <div class="faq-item bg-white rounded-xl border border-borderCream overflow-hidden transition-all duration-200">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif font-bold text-charcoal text-base flex items-center gap-3">
+              <span class="text-terracotta font-enSerif font-bold text-lg">Q.</span>
+              パン作りや料理の経験が全くない初心者でも参加できますか？
+            </span>
+            <i class="fa-solid fa-chevron-down text-stoneGray text-xs transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-sm text-stoneDark leading-relaxed">
+            <p>
+              はい、全く問題ございません。スタートアップレッスンは基本の計量や捏ね方、器具の正しい扱い方から丁寧に指導いたします。最大6名の少人数制のため、講師がすぐそばでサポートしますので安心してお越しください。
+            </p>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item bg-white rounded-xl border border-borderCream overflow-hidden transition-all duration-200">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif font-bold text-charcoal text-base flex items-center gap-3">
+              <span class="text-terracotta font-enSerif font-bold text-lg">Q.</span>
+              当日の持ち物は何が必要ですか？ 手ぶらで行っても良いですか？
+            </span>
+            <i class="fa-solid fa-chevron-down text-stoneGray text-xs transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-sm text-stoneDark leading-relaxed">
+            <p>
+              大変恐れ入りますが、衛生管理および学びの定着のため、<strong>エプロン、ハンドタオル、筆記用具</strong>のご持参をお願いしております。実習で使用する計量スプーンやボウル、成形台、オーブン、焼き上げたパンのお持ち帰り用専用袋等はすべてサロン側でご用意しております。
+            </p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item bg-white rounded-xl border border-borderCream overflow-hidden transition-all duration-200">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif font-bold text-charcoal text-base flex items-center gap-3">
+              <span class="text-terracotta font-enSerif font-bold text-lg">Q.</span>
+              予約方法とお支払い、日程変更・キャンセルはどうなっていますか？
+            </span>
+            <i class="fa-solid fa-chevron-down text-stoneGray text-xs transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-sm text-stoneDark leading-relaxed">
+            <p>
+              ご予約は専用の「STORES予約」システムにて受付・クレジットカード等で事前決済となります。日程変更やキャンセルは、材料仕入れの都合上、レッスン開催日の3日前までシステム上でお手続きが可能です。
+            </p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item bg-white rounded-xl border border-borderCream overflow-hidden transition-all duration-200">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif font-bold text-charcoal text-base flex items-center gap-3">
+              <span class="text-terracotta font-enSerif font-bold text-lg">Q.</span>
+              スタートアップレッスン受講後に、本科コースへの無理な勧誘はありますか？
+            </span>
+            <i class="fa-solid fa-chevron-down text-stoneGray text-xs transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-sm text-stoneDark leading-relaxed">
+            <p>
+              無理な勧誘や引き止めは一切ございません。スタートアップレッスンにご満足いただき、「さらに深く体系的に学びたい」「独立の準備を進めたい」と希望された方にのみ、本科コースのご案内を差し上げております。
+            </p>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item bg-white rounded-xl border border-borderCream overflow-hidden transition-all duration-200">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serif font-bold text-charcoal text-base flex items-center gap-3">
+              <span class="text-terracotta font-enSerif font-bold text-lg">Q.</span>
+              男性でも受講できますか？
+            </span>
+            <i class="fa-solid fa-chevron-down text-stoneGray text-xs transition-transform duration-300 faq-icon"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-sm text-stoneDark leading-relaxed">
+            <p>
+              はい、男性の方も大歓迎です。当サロンは科学的・理論的なアプローチを重視しているため、ロジカルに料理を学びたい男性や、定年後のカフェ開業を目指す男性の受講生も多く通われています。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 10. 注意事項 ＆ サロンアクセス (恵比寿サロン概要) -->
+  <!-- ============================================================== -->
+  <section id="access" class="py-24 bg-white border-b border-borderCream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- 左側：サロンアクセス情報 -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-enSerif tracking-[0.3em] text-terracotta font-semibold uppercase">Location &amp; Access</span>
+            <h2 class="font-serif text-3xl font-bold text-charcoal">サロン所在地・アクセス</h2>
+            <div class="w-12 h-[2px] bg-terracotta"></div>
+          </div>
+
+          <p class="text-stoneGray text-sm leading-relaxed">
+            JR山手線・埼京線・東京メトロ日比谷線「恵比寿駅」東口より徒歩5分。<br>
+            都会の喧騒から少し離れた、静かで洗練された恵比寿の隠れ家スタジオです。
+          </p>
+
+          <div class="bg-warmIvory p-6 rounded-2xl border border-borderCream space-y-4 text-sm text-stoneDark">
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-location-dot text-terracotta text-lg mt-0.5"></i>
+              <div>
+                <strong class="text-charcoal block">恵比寿プロターブル（BREAD &amp; DELI）</strong>
+                <span>東京都渋谷区恵比寿（プライベートサロン）</span>
+                <p class="text-xs text-stoneGray mt-1">※防犯および少人数制プライベートサロンのため、詳細な番地・部屋番号はSTORES予約完了メールにてご案内いたします。</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 border-t border-borderCream pt-3">
+              <i class="fa-solid fa-train text-terracotta text-lg mt-0.5"></i>
+              <div>
+                <strong class="text-charcoal block">最寄り駅からの所要時間</strong>
+                <span>・JR「恵比寿駅」東口改札より徒歩5分</span><br>
+                <span>・東京メトロ日比谷線「恵比寿駅」1番出口より徒歩7分</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 border-t border-borderCream pt-3">
+              <i class="fa-solid fa-envelope text-terracotta text-lg mt-0.5"></i>
+              <div>
+                <strong class="text-charcoal block">お問い合わせ</strong>
+                <span>公式LINE、またはInstagramのダイレクトメッセージよりお気軽にどうぞ。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側：受講上の注意事項 (利用規約・衛生管理) -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-enSerif tracking-[0.3em] text-mutedOlive font-semibold uppercase">Notice &amp; Policy</span>
+            <h2 class="font-serif text-3xl font-bold text-charcoal">受講に際しての注意事項</h2>
+            <div class="w-12 h-[2px] bg-mutedOlive"></div>
+          </div>
+
+          <div class="bg-stoneLight p-6 sm:p-8 rounded-2xl border border-borderCream space-y-4 text-xs sm:text-sm text-stoneDark leading-relaxed">
+            <div class="space-y-1">
+              <strong class="text-charcoal block flex items-center gap-2">
+                <i class="fa-solid fa-circle-exclamation text-terracotta"></i> 持ち物・集合時間について
+              </strong>
+              <p class="text-stoneGray">
+                エプロン、ハンドタオル、筆記用具を必ずご持参ください。生地の発酵時間等の関係上、定刻通りの開始となります。開始10分前より入室可能です。
+              </p>
+            </div>
+
+            <div class="space-y-1 border-t border-borderCream pt-3">
+              <strong class="text-charcoal block flex items-center gap-2">
+                <i class="fa-solid fa-circle-exclamation text-terracotta"></i> 衛生管理と服装
+              </strong>
+              <p class="text-stoneGray">
+                長い髪は束ねていただき、爪は短く整えてご参加ください。指輪や時計などの装飾品は実習中は外していただきます。
+              </p>
+            </div>
+
+            <div class="space-y-1 border-t border-borderCream pt-3">
+              <strong class="text-charcoal block flex items-center gap-2">
+                <i class="fa-solid fa-circle-exclamation text-terracotta"></i> アレルギーについて
+              </strong>
+              <p class="text-stoneGray">
+                レッスンでは小麦、乳製品、卵、ナッツ類等を使用します。重度のアレルギーをお持ちの方は事前にご相談ください。
+              </p>
+            </div>
+
+            <div class="space-y-1 border-t border-borderCream pt-3">
+              <strong class="text-charcoal block flex items-center gap-2">
+                <i class="fa-solid fa-circle-exclamation text-terracotta"></i> 写真・動画撮影に関して
+              </strong>
+              <p class="text-stoneGray">
+                ご自身の手元や完成料理の静止画撮影・SNS投稿は大歓迎です。他の生徒様のプライバシー保護のため、お顔の映り込みや動画撮影・レシピの無断転載はご遠慮ください。
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 11. 最終CTAバナーセクション (予約へ導くクロージング) -->
+  <!-- ============================================================== -->
+  <section class="py-20 bg-charcoal text-white text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 space-y-6 relative z-10">
+      <span class="inline-block font-enSerif tracking-[0.25em] text-terracotta uppercase text-xs font-semibold">Start Your Culinary Journey</span>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+        日常を上質に引き上げる第一歩を、<br>
+        恵比寿のテーブルから。
+      </h2>
+      <p class="text-stoneLight/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+        まずはスタートアップレッスン（5時間 / 7,700円税込）で、本物のプロが教える科学的パン作りの世界をご体験ください。少人数制のため各回満席になり次第締切となります。
+      </p>
+      <div class="pt-4">
+        <!-- 予約はSTORESへ直結 -->
+        <a href="https://stores.jp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-terracotta hover:bg-terracottaHover text-white px-10 py-5 rounded-md text-base font-medium shadow-2xl hover:scale-105 transition-all duration-300">
+          <i class="fa-solid fa-calendar-check text-lg"></i>
+          <span>STORES予約で空席状況を確認する</span>
+        </a>
+      </div>
+      <p class="text-xs text-stoneLight/60">※外部のSTORES予約システムへ安全に接続します</p>
+    </div>
+
+    <!-- 背景装飾円 -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-terracotta/10 rounded-full filter blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-mutedOlive/10 rounded-full filter blur-3xl pointer-events-none"></div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- 12. フッター -->
+  <!-- ============================================================== -->
+  <footer class="bg-stoneDark text-stoneLight/70 text-xs py-14 border-t border-stoneGray/20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+      
+      <div class="space-y-2 text-center md:text-left">
+        <div class="font-serif text-lg font-bold text-white tracking-wider">恵比寿プロターブル</div>
+        <p class="font-enSerif text-xs tracking-widest text-mutedOlive uppercase">BREAD &amp; DELI COOKING SALON EBISU</p>
+        <p class="text-[11px] text-stoneLight/50">JR・日比谷線「恵比寿駅」東口徒歩5分</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 text-xs">
+        <a href="#concept" class="hover:text-white transition-colors">コンセプト</a>
+        <a href="#strengths" class="hover:text-white transition-colors">3つの強み</a>
+        <a href="#future" class="hover:text-white transition-colors">得られる未来</a>
+        <a href="#lessons" class="hover:text-white transition-colors">レッスン・料金</a>
+        <a href="#instructor" class="hover:text-white transition-colors">講師紹介</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="#access" class="hover:text-white transition-colors">アクセス</a>
+      </div>
+
+      <div class="flex items-center gap-4 text-base text-stoneLight">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="hover:text-terracotta transition-colors" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.threads.net/" target="_blank" rel="noopener noreferrer" class="hover:text-terracotta transition-colors" aria-label="Threads">
+          <i class="fa-brands fa-threads"></i>
+        </a>
+        <a href="https://line.me/" target="_blank" rel="noopener noreferrer" class="hover:text-terracotta transition-colors" aria-label="LINE">
+          <i class="fa-brands fa-line"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 mt-10 pt-6 border-t border-stoneGray/20 text-center text-[11px] text-stoneLight/40">
+      &copy; 2026 EBISU PRO TABLE. All Rights Reserved. Designed for WIX Implementation.
+    </div>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- 画面下部 固定予約バー（モバイル・スクロール時の確実な導線） -->
+  <!-- ============================================================== -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-borderCream py-3 px-5 sm:hidden stores-sticky-banner flex items-center justify-between gap-3">
+    <div>
+      <span class="block text-[10px] text-terracotta font-bold uppercase">Start Up Lesson</span>
+      <span class="text-xs font-bold text-charcoal">体験 5時間 ¥7,700</span>
+    </div>
+    <a href="https://stores.jp/" target="_blank" rel="noopener noreferrer" class="bg-terracotta text-white text-xs font-medium px-5 py-2.5 rounded shadow flex items-center gap-1.5">
+      <span>STORESで予約</span>
+      <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+    </a>
+  </div>
+
+  <!-- インタラクション用スクリプト -->
+  <script>
+    // モバイルメニューのトグル
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      if (mobileMenu.classList.contains('hidden')) {
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      } else {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      }
+    });
+
+    // モバイルメニュー内リンククリックで閉じる
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      });
+    });
+
+    // FAQアコーディオン
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const toggle = item.querySelector('.faq-toggle');
+      toggle.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        // 他のFAQを閉じる
+        faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
